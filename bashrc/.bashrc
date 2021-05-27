@@ -145,4 +145,9 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye
 
+
+export SPICETIFY_INSTALL="/home/hexalyse/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"
+
+
 (cat ~/.cache/wal/sequences &)
