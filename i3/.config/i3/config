@@ -241,10 +241,10 @@ gaps outer 0
 
 # Initialize keyboard layout to qwerty international
 exec_always --no-startup-id 'setxkbmap -model pc105 -layout us -variant altgr-intl'
-exec --no-startup-id '/bin/sh /home/hexalyse/initializeSession.sh'
-exec --no-startup-id '/bin/sh /home/hexalyse/.screenlayout/external-hdmi.sh'
+exec --no-startup-id '/home/hexalyse/initializeSession.sh'
+exec --no-startup-id '/home/hexalyse/.screenlayout/external-hdmi.sh'
 exec --no-startup-id '/usr/bin/mullvad-vpn'
-exec --no-startup-id 'pkill redshift; /usr/bin/redshift'
+exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 
 # Assign apps to specific workspaces
 for_window [class="Spotify"] move to workspace $ws8
