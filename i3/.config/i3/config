@@ -21,15 +21,15 @@ font pango:"Hack Nerd Font" 9
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
 # Set last wallpaper used with betterlockscreen
 exec --no-startup-id betterlockscreen -w 
 
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dim
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -209,9 +209,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+#         status_command i3status
+# }
 
 exec_always --no-startup-id "pkill picom; picom --experimental-backends"
 
@@ -231,16 +231,20 @@ client.urgent		$ubgcolor	$ubgcolor	$textcolor	$ubgcolor
 
 # Turn borders off
 for_window [class="^.*"] border pixel 0
+# default_border none
 
 # Set inner/outer gaps
-gaps inner 8
-gaps outer -2
+gaps inner 10
+gaps outer 0
 # gaps top   25
 # smart_gaps on
 
-
 # Initialize keyboard layout to qwerty international
-exec_always 'setxkbmap -model pc105 -layout us -variant altgr-intl'
-exec '/bin/sh /home/hexalyse/initializeSession.sh'
-exec '/bin/sh /home/hexalyse/.screenlayout/external-hdmi.sh'
-exec '/usr/bin/mullvad-vpn'
+exec_always --no-startup-id 'setxkbmap -model pc105 -layout us -variant altgr-intl'
+exec --no-startup-id '/bin/sh /home/hexalyse/initializeSession.sh'
+exec --no-startup-id '/bin/sh /home/hexalyse/.screenlayout/external-hdmi.sh'
+exec --no-startup-id '/usr/bin/mullvad-vpn'
+exec --no-startup-id 'pkill redshift; /usr/bin/redshift'
+
+# Assign apps to specific workspaces
+for_window [class="Spotify"] move to workspace $ws8
