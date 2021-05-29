@@ -29,7 +29,7 @@ exec --no-startup-id betterlockscreen -w
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dim
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dimblur
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -171,7 +171,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
 # Lock screen
-bindsym $mod+m exec betterlockscreen -l dim
+bindsym $mod+m exec betterlockscreen -l dimblur
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -241,10 +241,12 @@ gaps outer 0
 
 # Initialize keyboard layout to qwerty international
 exec_always --no-startup-id 'setxkbmap -model pc105 -layout us -variant altgr-intl'
-exec --no-startup-id '/home/hexalyse/initializeSession.sh'
+#exec --no-startup-id '/home/hexalyse/initializeSession.sh'
 exec --no-startup-id '/home/hexalyse/.screenlayout/external-hdmi.sh'
 exec --no-startup-id '/usr/bin/mullvad-vpn'
 exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 
 # Assign apps to specific workspaces
-for_window [class="Spotify"] move to workspace $ws8
+for_window [class="^Spotify$"] move to workspace $ws8
+assign [class="^code-oss$"] $ws3
+assign [class="^firefox$"] $ws1

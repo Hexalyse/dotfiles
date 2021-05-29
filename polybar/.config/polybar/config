@@ -61,6 +61,7 @@ font-0 = "Hack Nerd Font Mono:size=9;2"
 font-1 = "Hack Nerd Font Mono:size=15;3"
 font-2 = "Hack Nerd Font Mono:size=16;3"
 font-3 = "Hack Nerd Font Mono:size=16;4"
+font-4 = "Hack Nerd Font Mono:size=15;4"
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
@@ -72,6 +73,8 @@ modules-right = temperature backlight-acpi pulseaudio battery date sep
 ;tray-position = right
 ;tray-padding = 2
 ;tray-background = #0063ff
+
+tray-transparent = false
 
 ; Position of the system tray window
 ; If empty or undefined, tray support will be disabled
@@ -183,9 +186,9 @@ ws-icon-1 = 2;%{T4}%{T-}
 ws-icon-2 = 3;%{T4}%{T-}
 ws-icon-3 = 4;%{T2}%{T-}
 ws-icon-4 = 5;%{T2}歷%{T-}
-ws-icon-5 = 6;%{T2}ﭮ%{T-}
-ws-icon-6 = 7;%{T3}%{T-}
-ws-icon-7 = 8;%{T3}%{T-}
+ws-icon-5 = 6;%{T2}%{T-}
+ws-icon-6 = 7;%{T2}%{T-}
+ws-icon-7 = 8;%{T2}%{T-}
 ws-icon-8 = 9;%{T3}%{T-}
 ws-icon-9 = 10;%{T3}%{T-}
 ws-icon-default = " "
@@ -457,7 +460,7 @@ animation-charging-framerate = 750
 type = internal/temperature
 interval = 3
 ;thermal-zone = 0
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input
 warn-temperature = 80
 
 format = <ramp> <label>
@@ -516,7 +519,8 @@ type = custom/script
 interval = 2
 format-prefix = " "
 format = <label>
-exec = python /home/hexalyse/.config/polybar/scripts/spotify.sh -f '{artist}: {song}'
+exec = playerctl -p spotify metadata --format "{{ artist }} - {{ title }}"
+;exec = python /home/hexalyse/.config/polybar/scripts/spotify.sh -f '{artist}: {song}'
 ;format-underline = #1db954
 
 [settings]
