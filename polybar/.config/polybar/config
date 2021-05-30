@@ -72,9 +72,9 @@ modules-right = temperature backlight-acpi pulseaudio battery date sep
 
 ;tray-position = right
 ;tray-padding = 2
-;tray-background = #0063ff
+;tray-background = #2b303b
 
-tray-transparent = false
+tray-transparent = true
 
 ; Position of the system tray window
 ; If empty or undefined, tray support will be disabled
@@ -98,7 +98,7 @@ tray-maxsize = 16
 ; ARGB color (e.g. #f00, #ff992a, #ddff1023)
 ; By default the tray container will use the bar
 ; background color.
-tray-background = ${colors.background}
+tray-background = #ee2b303b
 
 ; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
 tray-offset-x = 0
@@ -460,7 +460,7 @@ animation-charging-framerate = 750
 type = internal/temperature
 interval = 3
 ;thermal-zone = 0
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
 warn-temperature = 80
 
 format = <ramp> <label>
