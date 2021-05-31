@@ -46,10 +46,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # # Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play
-bindsym XF86AudioPause exec --no-startup-id playerctl pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotify play
+bindsym XF86AudioStop exec --no-startup-id playerctl -p spotify pause
+bindsym XF86AudioNext exec --no-startup-id playerctl -p spotify next
+bindsym XF86AudioPrev exec --no-startup-id playerctl -p spotify previous
 
 # Print screen for screenshots
 bindsym Print exec --no-startup-id scrot -q 100 '%S:%M:%H_%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshots/ && dunstify "Screenshot Captured!!" "File : ~/Screenshots/$f"'
@@ -239,16 +239,19 @@ gaps outer 0
 # gaps top   25
 # smart_gaps on
 
+# gaps management shortcuts
 bindsym $mod+Shift+m gaps inner all plus 5
 bindsym $mod+Shift+k gaps inner all minus 5
 
+# Layout management script
+bindsym $mod+apostrophe exec ~/.config/i3/layout_manager.sh
+
 # Initialize keyboard layout to qwerty international
 exec_always --no-startup-id 'setxkbmap -model pc105 -layout us -variant altgr-intl'
-#exec --no-startup-id '/home/hexalyse/initializeSession.sh'
-exec --no-startup-id '/home/hexalyse/.screenlayout/external-hdmi.sh'
+exec --no-startup-id '~/.screenlayout/external-hdmi.sh'
 exec --no-startup-id '/usr/bin/mullvad-vpn'
 exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
-exec --no-startup-id 'i3-msg "workspace 2; append_layout /home/hexalyse/.config/i3/workspace2layout; exec alacritty; exec alacritty; exec alacritty; workspace 1"'
+
 
 # Assign apps to specific workspaces
 for_window [class="^Spotify$"] move to workspace $ws8
