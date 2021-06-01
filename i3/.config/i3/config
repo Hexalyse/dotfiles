@@ -246,10 +246,11 @@ bindsym $mod+Shift+k gaps inner all minus 5
 # Layout management script
 bindsym $mod+apostrophe exec ~/.config/i3/layout_manager.sh
 
-# Initialize keyboard layout to qwerty international
-exec_always --no-startup-id 'setxkbmap -model pc105 -layout us -variant altgr-intl'
-exec --no-startup-id '~/.screenlayout/external-hdmi.sh'
+# Turn off laptop screen and turn on only external hdmi screen
+exec --no-startup-id '/home/hexalyse/.screenlayout/external-hdmi.sh'
+# Start VPN
 exec --no-startup-id '/usr/bin/mullvad-vpn'
+# Start redshift - doesn't work!?
 exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 
 
