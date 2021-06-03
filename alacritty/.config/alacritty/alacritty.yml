@@ -17,6 +17,10 @@ font:
     style: Bold Italic
   size: 10
 
+window:
+  padding:
+    x: 0
+    y: 0
 
 colors:
   primary:
@@ -66,5 +70,6 @@ colors:
     magenta: '#8c738c'
     cyan: '#6d96a5'
     white: '#aeb3bb'
-#shell:
-#  program: /usr/bin/fish
+
+shell:
+  program: /usr/bin/fish
