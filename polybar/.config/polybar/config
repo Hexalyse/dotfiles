@@ -69,7 +69,7 @@ font-0 = "JetBrainsMono Nerd Font Mono:size=9;2"
 font-1 = "JetBrainsMono Nerd Font Mono:size=15;3"
 font-2 = "JetBrainsMono Nerd Font Mono:size=16;3"
 font-3 = "JetBrainsMono Nerd Font Mono:size=16;4"
-font-4 = "JetBrainsMono Nerd Font Mono:size=15;3"
+font-4 = "JetBrainsMono Nerd Font Mono:size=15;4"
 font-5 = "JetBrainsMono Nerd Font Mono:size=13;3"
 font-6 = "JetBrainsMono Nerd Font Mono:size=15;4"
 
@@ -194,11 +194,11 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/i3
 ws-icon-0 = 1;%{T7}%{T-}
 ws-icon-1 = 2;%{T4}%{T-}
-ws-icon-2 = 3;%{T4}%{T-}
+ws-icon-2 = 3;%{T4}%{T-}
 ws-icon-3 = 4;%{T2}%{T-}
 ws-icon-4 = 5;%{T2}歷%{T-}
 ws-icon-5 = 6;%{T2}%{T-}
-ws-icon-6 = 7;%{T2}%{T-}
+ws-icon-6 = 7;%{T5}%{T-}
 ws-icon-7 = 8;%{T2}%{T-}
 ws-icon-8 = 9;%{T3}%{T-}
 ws-icon-9 = 10;%{T3}%{T-}
