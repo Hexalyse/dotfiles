@@ -8,8 +8,8 @@
 
 configuration {
 
-	font: "Hack Nerd Font Mono 10";
-	width: 30;
+	font: "JetBrains Mono Nerd Font Mono 10";
+	width: 30; 
 	line-margin: 10;
 	lines: 6;
 	columns: 2;
