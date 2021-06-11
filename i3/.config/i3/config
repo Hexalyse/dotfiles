@@ -254,13 +254,17 @@ bindsym $mod+Shift+k gaps inner all minus 5
 # Layout management script
 bindsym $mod+apostrophe exec ~/.config/i3/layout_manager.sh
 
+# Switch master and secondary window
+bindsym $mod+p exec --no-startup-id ~/.config/i3/promote_window.py
+
 # Turn off laptop screen and turn on only external hdmi screen
-exec --no-startup-id '/home/hexalyse/.screenlayout/external-hdmi.sh'
+exec --no-startup-id ~/.screenlayout/external-hdmi.sh
 # Start VPN
 exec --no-startup-id '/usr/bin/mullvad-vpn'
 # Start redshift - doesn't work!?
 exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
-exec --no-startup-id '/home/hexalyse/.config/i3/start_apps.sh'
+exec --no-startup-id ~/.config/i3/start_apps.sh
+exec --no-startup-id ~/.config/i3/column_layout.py
 
 
 # Assign apps to specific workspaces
