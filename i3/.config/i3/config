@@ -58,7 +58,9 @@ bindsym Print exec --no-startup-id scrot -q 100 '%S:%M:%H_%Y-%m-%d_$wx$h.png' -e
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+# kitty vs alacritty, the debate is strong
+# bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+x kill
@@ -264,7 +266,7 @@ exec --no-startup-id '/usr/bin/mullvad-vpn'
 # Start redshift - doesn't work!?
 exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 exec --no-startup-id ~/.config/i3/start_apps.sh
-exec --no-startup-id ~/.config/i3/column_layout.py
+#exec --no-startup-id ~/.config/i3/column_layout.py
 
 
 # Assign apps to specific workspaces

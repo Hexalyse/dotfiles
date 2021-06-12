@@ -17,6 +17,13 @@ font:
     style: Bold Italic
   size: 10
 
+  offset:
+    x: 0
+    # Alacritty changed something
+    # and now my block characters have an ugly vertical space between them
+    # so I'm forced to do this ugly hack ? Meh...
+    y: -1
+
 window:
   padding:
     x: 5
