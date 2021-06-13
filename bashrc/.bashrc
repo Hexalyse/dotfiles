@@ -151,3 +151,4 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 
 
 (cat ~/.cache/wal/sequences &)
+. "$HOME/.cargo/env"

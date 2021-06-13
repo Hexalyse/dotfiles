@@ -128,6 +128,10 @@ bindsym $mod+Shift+z move container to workspace back_and_forth
 bindsym $mod+l workspace prev
 bindsym $mod+y workspace next
 
+# move workspaces between monitors/screens
+bindsym $mod+Ctrl+y move workspace to output right
+bindsym $mod+Ctrl+l move workspace to output left
+
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -247,7 +251,8 @@ for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 0
 # gaps top   25
-# smart_gaps on
+smart_gaps on
+# smart_borders no_gaps
 
 # gaps management shortcuts
 bindsym $mod+Shift+m gaps inner all plus 5
