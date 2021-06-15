@@ -30,7 +30,7 @@ primary = #5E81AC
 secondary = #e60053
 alert = #bf616a
 
-[bar/example]
+[bar/i3-nord]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 ;width = 95%:
@@ -480,6 +480,7 @@ type = internal/temperature
 interval = 3
 ;thermal-zone = 0
 hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+base-temperature = 40
 warn-temperature = 80
 
 format = <ramp> <label>
