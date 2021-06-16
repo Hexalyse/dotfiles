@@ -84,7 +84,7 @@ modules-right = temperature cpu memory pulseaudio battery date power
 
 ;tray-position = right
 ;tray-padding = 2
-;tray-background = #2b303b
+tray-background = #2b303b
 
 tray-transparent = true
 
@@ -120,7 +120,7 @@ tray-offset-y = 0
 tray-padding = 0
 
 ; Scale factor for tray clients
-tray-scale = 1.0
+;tray-scale = 1.0
 
 ;wm-restack = bspwm
 ;wm-restack = i3
