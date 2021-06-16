@@ -110,7 +110,7 @@ tray-maxsize = 16
 ; ARGB color (e.g. #f00, #ff992a, #ddff1023)
 ; By default the tray container will use the bar
 ; background color.
-tray-background = #ee2b303b
+;tray-background = #ee2b303b
 
 ; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
 tray-offset-x = 0
@@ -264,13 +264,14 @@ label-song-ellipsis = true
 type = custom/text
 content = |
 
-;[module/update]
-;type = custom/script
-;exec = sudo ~/.config/polybar/scripts/update.sh
-;interval = 600
-;format = <label>
-;label = %{T3}%{T-} %output%
-;click-left = "bash ~/.config/polybar/scripts/upclick.sh"
+[module/update]
+type = custom/script
+exec = ~/.config/polybar/scripts/update.sh
+interval = 3600
+format = <label>
+label = %{T3}%{T-} %output%
+click-left = "bash ~/.config/polybar/scripts/upclick.sh"
+format-underline = #88c0d0
 
 [module/xbacklight]
 type = internal/light

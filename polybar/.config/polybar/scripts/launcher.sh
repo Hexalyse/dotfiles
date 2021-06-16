@@ -1,1 +1,1 @@
-rofi -modi drun -show drun
+rofi -modi drun,run,window,ssh -show drun

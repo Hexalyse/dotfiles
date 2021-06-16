@@ -1,1 +1,1 @@
-alacritty -e $SHELL -c 'yay -Syyu && $SHELL'
+kitty -e $SHELL -c 'yay -Syyu && $SHELL'

@@ -258,11 +258,15 @@ gaps outer 0
 bindsym $mod+Shift+m gaps inner all plus 5
 bindsym $mod+Shift+k gaps inner all minus 5
 
+
+# Various keybindings
 # Layout management script
 bindsym $mod+apostrophe exec ~/.config/i3/layout_manager.sh
-
 # Switch master and secondary window
 bindsym $mod+p exec --no-startup-id ~/.config/i3/promote_window.py
+# Play a youtube video whose link is in clipboard with mpv+youtube-dl
+bindsym $mod+u exec --no-startup-id ~/.config/i3/play_yt_video.sh
+
 
 # Turn off laptop screen and turn on only external hdmi screen
 exec --no-startup-id ~/.screenlayout/external-hdmi.sh
