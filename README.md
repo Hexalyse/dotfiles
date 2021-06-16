@@ -6,7 +6,7 @@ This repository contains my dotfiles.
 
 You will find different branches, corresponding to different themes/styles I made (they can use different Window Managers). The readme of each branch may contain screenshots of examples screens of what you can get visually, using those dotfiles.
 
-The `main` branch may or may not correspond to what I'm using currently, so do refer to the branches for the most up-to-date version of each theme.
+The `main` branch is what I'm currently using, but you can check other branches to see different themes/setups.
 
 ## How dotfiles are stored and how to use them
 
