@@ -54,7 +54,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl -p spotify previous
 # Print screen for screenshots
 #bindsym Print exec --no-startup-id scrot -q 100 '%S:%M:%H_%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshots/ && dunstify "Screenshot Captured!!" "File : ~/Screenshots/$f"'
 bindsym Print exec --no-startup-id maim ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send "Screenshot" "Screenshot saved."
-bindsym Shift+Print exec --no-startup-id maim -s ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send "Screenshot" "Screenshot saved."
+bindsym Shift+Print exec --no-startup-id "maim -s ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send 'Screenshot' 'Screenshot saved.'"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
