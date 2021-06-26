@@ -1,0 +1,43 @@
+# Media control keys
+XF86AudioPlay
+	playerctl -p spotify play
+XF86AudioStop
+	playerctl -p spotify pause
+XF86AudioPause
+	playerctl -p spotify pause
+XF86AudioNext
+	playerctl -p spotify next
+XF86AudioPrev
+	playerctl -p spotify previous
+
+# Volume control keys
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Screenshot keys
+Print
+    maim ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send "Screenshot" "Screenshot saved."
+shift+Print
+    maim -s ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send "Screenshot" "Screenshot saved."
+
+# workflow shortcuts
+super+d
+	rofi -modi drun,run,window,ssh -show drun
+super+shift+d
+	rofi -modi window -show window
+super+m
+	betterlockscreen -l dimblur
+super+Shift+q
+	~/.config/rofi/powermenu/powermenu.sh
+
+# Apps shortcuts
+super+Return
+	kitty
+super+shift+Return
+	nemo

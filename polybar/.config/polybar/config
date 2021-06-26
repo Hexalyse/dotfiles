@@ -80,7 +80,7 @@ font-6 = "JetBrainsMono Nerd Font Mono:size=15;4"
 
 modules-left = i3 spotify
 modules-center = polywins
-modules-right = temperature cpu memory pulseaudio battery date power
+modules-right = temperature cpu memory pulseaudio battery wlan date power
 
 ;tray-position = right
 ;tray-padding = 2
@@ -313,14 +313,14 @@ type = internal/network
 interface = wlp59s0
 interval = 5.0
 
-format-connected-underline = #b48ead
+format-connected-underline = #8fbcbb
 format-connected = <label-connected>
 ;format-connected-underline = #9f78e1
 label-connected = %{T2}%{T-} %essid%
 ;%{A1:nmtui:}%essid%%{A} 
 ;%essid%
 
-format-disconnected-underline = #b48ead
+format-disconnected-underline = #8fbcbb
 format-disconnected = %{T1} %{T-}
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
@@ -363,7 +363,9 @@ time-alt = "%{T2}%{T-} %I:%M:%S %p"
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #5e81ac
-format-underline = #b48ead
+;format-underline = #b48ead
+;format-underline = #8fbcbb
+format-underline = #4c566a
 
 label = %date% %time%
 
@@ -480,7 +482,7 @@ animation-charging-framerate = 750
 type = internal/temperature
 interval = 3
 ;thermal-zone = 0
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+hwmon-path = /sys/class/hwmon/hwmon5/temp1_input
 base-temperature = 40
 warn-temperature = 80
 
