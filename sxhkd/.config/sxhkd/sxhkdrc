@@ -33,7 +33,7 @@ super+shift+d
 	rofi -modi window -show window
 super+m
 	betterlockscreen -l dimblur
-super+Shift+q
+super+shift+q
 	~/.config/rofi/powermenu/powermenu.sh
 
 # Apps shortcuts

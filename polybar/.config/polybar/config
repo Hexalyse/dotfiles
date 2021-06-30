@@ -19,19 +19,19 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;background = #2e3440
-background = #2b303b
+background = #282c34
 background-alt = #00000000
 ;foreground = ${xrdb:color7:#222}
 ;foreground = #eceff4
 ;foreground-alt = #eceff4
-foreground = #c0c5ce
-foreground-alt = #c0c5ce
-primary = #5E81AC
+foreground = #c8ccd4
+foreground-alt = #c8ccd4
+primary = #61afef
 secondary = #e60053
-alert = #bf616a
+alert = #e06c75
 
 [bar/i3-nord]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:DP-3}
 width = 100%
 ;width = 95%:
 height = 23
@@ -84,7 +84,7 @@ modules-right = temperature cpu memory pulseaudio battery wlan date power
 
 ;tray-position = right
 ;tray-padding = 2
-tray-background = #2b303b
+tray-background = #282c34
 
 tray-transparent = true
 
@@ -221,9 +221,9 @@ label-mode-background = ${colors.primary}
 label-focused = %icon%
 ;label-focused-background = #0000
 ;${colors.background-alt}
-;label-focused-underline= ${colors.primary}
-label-focused-foreground= #85a7e6
-;label-focused-foreground= ${colors.primary}
+label-focused-underline= ${colors.primary}
+;label-focused-foreground= #85a7e6
+label-focused-foreground= ${colors.primary}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
