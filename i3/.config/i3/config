@@ -122,7 +122,7 @@ bindsym $mod+w layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # switch between the current and the previously focused one
 bindsym $mod+z workspace back_and_forth
@@ -131,6 +131,9 @@ bindsym $mod+Shift+z move container to workspace back_and_forth
 # move to next or previous workspace
 bindsym $mod+l workspace prev
 bindsym $mod+y workspace next
+
+# Swap monitor workspaces
+bindsym $mod+j exec --no-startup-id ~/.config/i3/swap_workspaces.sh
 
 # move workspaces between monitors/screens
 bindsym $mod+Ctrl+y move workspace to output right
@@ -236,19 +239,18 @@ set $ibgcolor #3b4252
 set $textcolor #eceff4
 set $itextcolor #4c566a
 set $ubgcolor #bf616a
-set $iborder #3b4252
-set $border #2e3440
-set $border #4c566a
+set $iborder #2e3440
+set $border #566176
 # set $border #5e81ac
 
 #			border		background	text		indicator
-client.focused		$border	$bgcolor	$textcolor	$bgcolor $border
-client.unfocused	$iborder	$ibgcolor	$itextcolor	$ibgcolor $iborder
-client.focused_inactive	$border	$ibgcolor	$itextcolor	$ibgcolor $iborder
+client.focused		$border	        $bgcolor	$textcolor	$border $border
+client.unfocused	$iborder	$ibgcolor	$itextcolor	$iborder $iborder
+client.focused_inactive	$iborder	        $ibgcolor	$itextcolor	$iborder $iborder
 client.urgent		$ubgcolor	$ubgcolor	$textcolor	$ubgcolor $ubgcolor
 
 # Turn borders off
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 # default_border none
 
 # Set inner/outer gaps
@@ -282,13 +284,13 @@ exec --no-startup-id '/usr/bin/mullvad-vpn'
 exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 exec --no-startup-id ~/.config/i3/start_apps.sh
 exec --no-startup-id ~/.config/polybar/launch.sh
-#exec --no-startup-id ~/.config/i3/column_layout.py
+exec --no-startup-id ~/.config/i3/column_layout.py
 
 
 # Assign apps to specific workspaces
 for_window [class="^Spotify$"] move to workspace $ws8
-assign [class="^code-oss$"] $ws3
-assign [class="^firefox$"] $ws1
+assign [class="^Code$"] $ws3
+# assign [class="^firefox$"] $ws1
 # Windows that should start floating
 for_window [class="^Nitrogen$"] floating enable
 for_window [class="^Pavucontrol$"] floating enable

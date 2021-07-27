@@ -138,8 +138,6 @@ ex ()
   fi
 }
 
-[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
-
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
@@ -151,4 +149,7 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 
 
 (cat ~/.cache/wal/sequences &)
-. "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

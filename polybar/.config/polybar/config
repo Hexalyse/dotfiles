@@ -18,8 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-;background = #2e3440
-background = #282c34
+background = #2e3440
+;background = #282c34
 background-alt = #00000000
 ;foreground = ${xrdb:color7:#222}
 ;foreground = #eceff4
@@ -34,7 +34,7 @@ alert = #e06c75
 monitor = ${env:MONITOR:DP-3}
 width = 100%
 ;width = 95%:
-height = 23
+height = 24
 ;offset-x = 2.5%
 ;offset-x = 1%
 ;offset-y = 1%
@@ -80,11 +80,12 @@ font-6 = "JetBrainsMono Nerd Font Mono:size=15;4"
 
 modules-left = i3 spotify
 modules-center = polywins
-modules-right = temperature cpu memory pulseaudio battery wlan date power
+modules-right = temperature cpu pulseaudio battery date power
 
 ;tray-position = right
 ;tray-padding = 2
-tray-background = #282c34
+;tray-background = #282c34
+tray-background = #2e3440
 
 tray-transparent = true
 
@@ -193,15 +194,15 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/i3]
 type = internal/i3
-ws-icon-0 = 1;1:%{T7}%{T-}
-ws-icon-1 = 2;2:%{T4}%{T-}
-ws-icon-2 = 3;3:%{T4}%{T-}
-ws-icon-3 = 4;4:%{T2}%{T-}
-ws-icon-4 = 5;5:%{T2}%{T-}
-ws-icon-5 = 6;6:%{T2}%{T-}
-ws-icon-6 = 7;7:%{T5}%{T-}
-ws-icon-7 = 8;8:%{T2}%{T-}
-ws-icon-8 = 9;9:%{T3}%{T-}
+ws-icon-0 = 1;1: %{T7}%{T-}
+ws-icon-1 = 2;2: %{T4}%{T-}
+ws-icon-2 = 3;3: %{T4}%{T-}
+ws-icon-3 = 4;4: %{T2}%{T-}
+ws-icon-4 = 5;5: %{T2}%{T-}
+ws-icon-5 = 6;6: %{T2}%{T-}
+ws-icon-6 = 7;7: %{T5}%{T-}
+ws-icon-7 = 8;8: %{T2}%{T-}
+ws-icon-8 = 9;9: %{T3}%{T-}
 ws-icon-9 = 10;%{T3}%{T-}
 ws-icon-default = " "
 format = <label-state> 
