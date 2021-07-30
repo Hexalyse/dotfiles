@@ -53,8 +53,8 @@ inputbar {
 
 /* Text search bar */
 entry {
-  padding: 16px;
-	text-color: @snow-1;
+  padding: 10px 0;
+	text-color: #c8ccd4;
 	font: "JetBrainsMono Nerd Font Mono 11";
 }
 
@@ -62,34 +62,32 @@ entry {
 prompt {
 	enabled: true;
 	font: "JetBrainsMono Nerd Font Mono 20";
-	padding: 10 10 15 15;
+	padding: 2 -15 10 10;
 	text-color: @polar-2;
 }
 
 listview {
   cycle: false;
-	lines: 10;
-	scrollbar: false;
+  lines: 10;
+  scrollbar: false;
 }
 
 #scrollbar {
-	handle-color: @polar-2;
-	handle-width: 10px;
+	handle-color: @polar-3;
+	handle-width: 3px;
 }
 
 element {
 	font: "JetBrainsMono Nerd Font Mono 20";
   border: 0 0 1px 0;
-  padding: 12px;
-	spacing: 10px;
+  padding: 10px;
 }
 
 element selected {
-  text-color: @snow-3;
 	background-color: @polar-2;
 }
 
 element-icon {
-	size: 20px;
-	padding: 0 12px 0 0;
+	size: 18px;
+	padding: 0 0px 0 0;
 }
