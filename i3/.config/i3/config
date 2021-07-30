@@ -35,6 +35,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dimbl
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+exec --no-startup-id flameshot
+exec --no-startup-id pamac-tray
+
 # TODO: Add brightness control with dunst
 
 # TODO: Replace with dunst versions

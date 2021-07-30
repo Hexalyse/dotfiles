@@ -22,9 +22,10 @@ XF86AudioMicMute
 
 # Screenshot keys
 Print
-    maim ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send "Screenshot" "Screenshot saved."
+  maim ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send "Screenshot" "Screenshot saved."
 shift+Print
-    maim -s ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send "Screenshot" "Screenshot saved."
+#  maim -s ~/$(date +'%Y-%m-%d_%H:%M:%S').png && notify-send "Screenshot" "Screenshot saved."
+  flameshot gui
 
 # workflow shortcuts
 super+space
