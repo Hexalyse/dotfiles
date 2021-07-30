@@ -29,9 +29,9 @@ shift+Print
 
 # workflow shortcuts
 super+space
-	rofi -modi drun,run,window,ssh -show drun
+	rofi -modi drun,run,window,ssh -show drun -config ~/.config/rofi/config2
 super+shift+d
-	rofi -modi window -show window
+	rofi -modi window -show window -config ~/.config/rofi/config2
 super+m
 	betterlockscreen -l dimblur
 super+shift+q
