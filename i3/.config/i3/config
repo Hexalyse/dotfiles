@@ -15,14 +15,17 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:"JetBrainsMono Nerd Font Mono" 9
+#font pango:JetBrainsMono Nerd Font Mono 9
+font pango:Noto Sans 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
 # Set last wallpaper used with betterlockscreen
-exec --no-startup-id betterlockscreen -w 
+#exec --no-startup-id betterlockscreen -w 
+# Restore nitrogen wallpaper
+exec --no-startup-id nitrogen --restore
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -240,7 +243,7 @@ exec_always --no-startup-id "pkill picom; picom --experimental-backends"
 set $bgcolor #2e3440
 set $ibgcolor #3b4252
 set $textcolor #eceff4
-set $itextcolor #4c566a
+set $itextcolor #d8dee9
 set $ubgcolor #bf616a
 set $iborder #2e3440
 set $border #566176
@@ -270,7 +273,7 @@ bindsym $mod+Shift+k gaps inner all minus 5
 
 # Various keybindings
 # Layout management script
-bindsym $mod+apostrophe exec ~/.config/i3/layout_manager.sh
+# bindsym $mod+apostrophe exec ~/.config/i3/layout_manager.sh
 # Switch master and secondary window
 bindsym $mod+p exec --no-startup-id ~/.config/i3/promote_window.py
 # Play a youtube video whose link is in clipboard with mpv+youtube-dl
