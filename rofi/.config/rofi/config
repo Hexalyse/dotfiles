@@ -1,1 +1,3 @@
-rofi.theme: nord
+configuration {
+  theme: "nord";
+}

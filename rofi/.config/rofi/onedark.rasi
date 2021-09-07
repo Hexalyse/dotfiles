@@ -2,7 +2,6 @@
 
 
 configuration {
-	width: 500;
 	show-icons: true;
 	terminal: "kitty";
 	auto-select: false;
@@ -13,6 +12,10 @@ configuration {
 	font: "JetBrainsMono Nerd Font Mono 11";
 	modi: "window,run,drun";
 	show-icons: true;
+}
+
+window {
+	width: 500;
 }
 
 * {
@@ -86,7 +89,12 @@ element {
 element selected {
 	background-color: @polar-2;
 }
-
+element-text selected {
+	background-color: @polar-2;
+}
+element-icon selected {
+	background-color: @polar-2;
+}
 element-icon {
 	size: 18px;
 	padding: 0 0px 0 0;

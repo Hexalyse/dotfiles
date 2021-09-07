@@ -1,1 +1,3 @@
-rofi.theme: onedark
+configuration {
+  theme: "onedark";
+}

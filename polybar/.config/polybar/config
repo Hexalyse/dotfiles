@@ -31,7 +31,7 @@ secondary = #e60053
 alert = #e06c75
 
 [bar/i3-nord]
-monitor = ${env:MONITOR:DP-3}
+monitor = ${env:MONITOR:DP-1}
 width = 100%
 ;width = 95%:
 height = 24
