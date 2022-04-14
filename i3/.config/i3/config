@@ -39,7 +39,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dimbl
 exec --no-startup-id nm-applet
 
 exec --no-startup-id flameshot
-exec --no-startup-id pamac-tray
 
 # TODO: Add brightness control with dunst
 
