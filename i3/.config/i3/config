@@ -287,7 +287,7 @@ exec --no-startup-id ~/.screenlayout/external-hdmi.sh
 # Start VPN
 exec --no-startup-id '/usr/bin/mullvad-vpn'
 # Start redshift - doesn't work!?
-exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
+# exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 exec --no-startup-id ~/.config/i3/start_apps.sh
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ~/.config/i3/column_layout.py
