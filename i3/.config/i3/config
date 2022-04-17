@@ -210,16 +210,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym n resize shrink width 10 px or 10 ppt
-        bindsym e resize grow height 10 px or 10 ppt
-        bindsym i resize shrink height 10 px or 10 ppt
-        bindsym o resize grow width 10 px or 10 ppt
+        bindsym n resize shrink width 10 px or 5 ppt
+        bindsym e resize grow height 10 px or 5 ppt
+        bindsym i resize shrink height 10 px or 5 ppt
+        bindsym o resize grow width 10 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 5 ppt
+        bindsym Down resize grow height 10 px or 5 ppt
+        bindsym Up resize shrink height 10 px or 5 ppt
+        bindsym Right resize grow width 10 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -235,24 +235,29 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
-exec_always --no-startup-id "pkill picom; picom --experimental-backends"
+exec_always --no-startup-id "pkill picom; picom --experimental-backends --config ~/.config/picom/picom.conf"
 
 
 #Theme
-set $bgcolor #2e3440
-set $ibgcolor #3b4252
+set $bgcolor #282828
+set $ibgcolor #282828
 set $textcolor #eceff4
 set $itextcolor #d8dee9
 set $ubgcolor #bf616a
-set $iborder #2e3440
-set $border #566176
+set $iborder #1a1b26
+set $border #444b6a
 # set $border #5e81ac
 
 #			border		background	text		indicator
 client.focused		$border	        $bgcolor	$textcolor	$border $border
 client.unfocused	$iborder	$ibgcolor	$itextcolor	$iborder $iborder
-client.focused_inactive	$iborder	        $ibgcolor	$itextcolor	$iborder $iborder
+client.focused_inactive	$iborder	$ibgcolor	$itextcolor	$iborder $iborder
 client.urgent		$ubgcolor	$ubgcolor	$textcolor	$ubgcolor $ubgcolor
+
+# spc config focused_border_color "#282828"
+# bspc config normal_border_color "#1a1b26"
+# bspc config active_border_color "#444b6a"
+
 
 # Turn borders off
 for_window [class="^.*"] border pixel 1
@@ -282,9 +287,9 @@ bindsym $mod+u exec --no-startup-id ~/.config/i3/play_yt_video.sh
 # Start the sxhkd keybind daemon
 exec --no-startup-id sxhkd
 # Turn off laptop screen and turn on only external hdmi screen
-exec --no-startup-id ~/.screenlayout/external-hdmi.sh
+# exec --no-startup-id ~/.screenlayout/external-hdmi.sh
 # Start VPN
-exec --no-startup-id '/usr/bin/mullvad-vpn'
+# exec --no-startup-id '/usr/bin/mullvad-vpn'
 # Start redshift - doesn't work!?
 # exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 exec --no-startup-id ~/.config/i3/start_apps.sh
