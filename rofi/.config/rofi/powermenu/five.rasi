@@ -43,6 +43,9 @@ element {
 }
 
 element-text {
+    background-color:  @al;
+    text-color: inherit;
+
 	font:							"feather 20";
     expand:                         true;
     horizontal-align:               0.5;

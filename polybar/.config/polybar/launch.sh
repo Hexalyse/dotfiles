@@ -1,57 +1,81 @@
 #!/usr/bin/env bash
 
-## Files and Directories
-DIR="$HOME/.config/polybar"
-SFILE="$DIR/system"
-RFILE="$DIR/.system"
-MFILE="$DIR/.module"
+dir="$HOME/.config/polybar"
+themes=(`ls --hide="launch.sh" $dir`)
 
-## Get system variable values for various modules
-get_values() {
-	CARD=$(basename "$(find /sys/class/backlight/* | head -n 1)")
-	BATTERY=$(basename "$(find /sys/class/power_supply/*BAT* | head -n 1)")
-	ADAPTER=$( "$(find /sys/class/power_supply/*AC* | head -n 1)")
-	INTERFACE=$(ip link | awk '/state UP/ {print $2}' | tr -d :)
-}
-
-## Write values to `system` file
-set_values() {
-	if [[ "$ADAPTER" ]]; then
-		sed -i -e "s/adapter = .*/adapter = $ADAPTER/g" "$SFILE"
-	fi
-	if [[ "$BATTERY" ]]; then
-		sed -i -e "s/battery = .*/battery = $BATTERY/g" "$SFILE"
-	fi
-	if [[ "$CARD" ]]; then
-		sed -i -e "s/graphics_card = .*/graphics_card = $CARD/g" "$SFILE"
-	fi
-	if [[ "$INTERFACE" ]]; then
-		sed -i -e "s/network_interface = .*/network_interface = $INTERFACE/g" "$SFILE"
-	fi
-}
-
-## Launch Polybar with selected style
 launch_bar() {
-	CARD=$(basename "$(find /sys/class/backlight/* | head -n 1)")
-	if [[ "$CARD" != *"intel_"* ]]; then
-		if [[ ! -f "$MFILE" ]]; then
-			sed -i -e 's/backlight/brightness/g' "$DIR"/config
-			touch "$MFILE"
-		fi
-	fi
-		
-	if [[ ! $(pidof polybar) ]]; then
-		polybar -r bar -c "$DIR"/config &
+	# Terminate already running bar instances
+	killall -q polybar
+
+	# Wait until the processes have been shut down
+	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+	# Launch the bar
+	if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
+		polybar -q top -c "$dir/$style/config.ini" &
+		polybar -q bottom -c "$dir/$style/config.ini" &
+	elif [[ "$style" == "pwidgets" ]]; then
+		bash "$dir"/pwidgets/launch.sh --main
 	else
-		polybar-msg cmd restart
+		polybar -q main -c "$dir/$style/config.ini" &	
 	fi
 }
 
-# Execute functions
-if [[ ! -f "$RFILE" ]]; then
-	get_values
-	set_values
-	touch "$RFILE"
-fi
+if [[ "$1" == "--material" ]]; then
+	style="material"
+	launch_bar
 
-launch_bar
+elif [[ "$1" == "--shades" ]]; then
+	style="shades"
+	launch_bar
+
+elif [[ "$1" == "--hack" ]]; then
+	style="hack"
+	launch_bar
+
+elif [[ "$1" == "--docky" ]]; then
+	style="docky"
+	launch_bar
+
+elif [[ "$1" == "--cuts" ]]; then
+	style="cuts"
+	launch_bar
+
+elif [[ "$1" == "--shapes" ]]; then
+	style="shapes"
+	launch_bar
+
+elif [[ "$1" == "--grayblocks" ]]; then
+	style="grayblocks"
+	launch_bar
+
+elif [[ "$1" == "--blocks" ]]; then
+	style="blocks"
+	launch_bar
+
+elif [[ "$1" == "--colorblocks" ]]; then
+	style="colorblocks"
+	launch_bar
+
+elif [[ "$1" == "--forest" ]]; then
+	style="forest"
+	launch_bar
+
+elif [[ "$1" == "--pwidgets" ]]; then
+	style="pwidgets"
+	launch_bar
+
+elif [[ "$1" == "--panels" ]]; then
+	style="panels"
+	launch_bar
+
+else
+	cat <<- EOF
+	Usage : launch.sh --theme
+		
+	Available Themes :
+	--blocks    --colorblocks    --cuts      --docky
+	--forest    --grayblocks     --hack      --material
+	--panels    --pwidgets       --shades    --shapes
+	EOF
+fi

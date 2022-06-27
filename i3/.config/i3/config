@@ -25,7 +25,8 @@ font pango:Noto Sans 9
 # Set last wallpaper used with betterlockscreen
 #exec --no-startup-id betterlockscreen -w 
 # Restore nitrogen wallpaper
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id nitrogen --restore
+exec --no-startup-id wal -R
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -88,8 +89,8 @@ bindsym $mod+q kill
 # change focus
 bindsym $mod+n focus left
 bindsym $mod+e focus down
-bindsym $mod+i focus up
-bindsym $mod+o focus right
+bindsym $mod+u focus up
+bindsym $mod+i focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -100,8 +101,8 @@ bindsym $mod+Right focus right
 # move focused window
 bindsym $mod+Shift+n move left
 bindsym $mod+Shift+e move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+u move up
+bindsym $mod+Shift+i move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -281,7 +282,7 @@ bindsym $mod+Shift+k gaps inner all minus 5
 # Switch master and secondary window
 bindsym $mod+p exec --no-startup-id ~/.config/i3/promote_window.py
 # Play a youtube video whose link is in clipboard with mpv+youtube-dl
-bindsym $mod+u exec --no-startup-id ~/.config/i3/play_yt_video.sh
+bindsym $mod+o exec --no-startup-id ~/.config/i3/play_yt_video.sh
 
 
 # Start the sxhkd keybind daemon
@@ -293,7 +294,7 @@ exec --no-startup-id sxhkd
 # Start redshift - doesn't work!?
 # exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 exec --no-startup-id ~/.config/i3/start_apps.sh
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh --grayblocks
 exec --no-startup-id ~/.config/i3/column_layout.py
 
 

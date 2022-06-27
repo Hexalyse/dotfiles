@@ -46,6 +46,9 @@ icon-search {
 }
 
 icon-search, entry, element-icon, element-text {
+    background-color:  @al;
+    text-color: inherit;
+
     vertical-align: 0.5;
 }
 
@@ -91,9 +94,15 @@ element selected normal, element selected active {
 }
 
 element-icon {
+    background-color:  @al;
+    text-color: inherit;
+
     size:   1em;
 }
 
 element-text {
+    background-color:  @al;
+    text-color: inherit;
+
     text-color: inherit;
 }

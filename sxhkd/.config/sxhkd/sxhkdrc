@@ -1,6 +1,6 @@
 # Media control keys
 XF86AudioPlay
-	playerctl -p spotify play
+	playerctl -p spotify play-pause
 XF86AudioStop
 	playerctl -p spotify pause
 XF86AudioPause
@@ -29,13 +29,17 @@ shift+Print
 
 # workflow shortcuts
 super+space
-	rofi -modi drun,run,window,ssh -show drun 
+#	rofi -modi drun,run,window,ssh -show drun 
+	~/.config/polybar/grayblocks/scripts/launcher.sh
 super+shift+d
 	rofi -modi window -show window
 super+m
 	betterlockscreen -l dimblur
 super+shift+q
 	~/.config/rofi/powermenu/powermenu.sh
+
+super+shift+x
+	pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
 # Apps shortcuts
 super+Return
