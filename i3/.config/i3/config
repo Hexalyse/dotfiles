@@ -33,7 +33,7 @@ exec --no-startup-id wal -R
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dimblur
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dimblur 
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -191,6 +191,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Scratchpad bindings
 bindsym $mod+period move scratchpad
+bindsym $mod+g scratchpad show
 bindsym $mod+comma scratchpad show
 
 # Lock screen
@@ -293,17 +294,16 @@ exec --no-startup-id sxhkd
 # exec --no-startup-id '/usr/bin/mullvad-vpn'
 # Start redshift - doesn't work!?
 # exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
-exec --no-startup-id ~/.config/i3/start_apps.sh
+# exec --no-startup-id ~/.config/i3/start_apps.sh
 exec --no-startup-id ~/.config/polybar/launch.sh --grayblocks
 exec --no-startup-id ~/.config/i3/column_layout.py
 
 
 # Assign apps to specific workspaces
 for_window [class="^Spotify$"] move to workspace $ws8
-assign [class="^Code$"] $ws3
-# assign [class="^firefox$"] $ws1
 # Windows that should start floating
 for_window [class="^Nitrogen$"] floating enable
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^org.remmina.Remmina$"] floating enable
 for_window [class="^Arandr$"] floating enable
+for_window [class="^mpv$"] floating enable

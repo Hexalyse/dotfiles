@@ -44,7 +44,7 @@ if [[ -f "/usr/bin/wal" ]]; then
 
 		BG=`printf "%s\n" "$background"`
 		FG=`printf "%s\n" "$background"`
-		BGA=`printf "%s\n" "$color8"`
+		BGA=`printf "%s\n" "$color7"`
 		FGA=`printf "%s\n" "$color7"`
 		AC=`printf "%s\n" "$color1"`
 
