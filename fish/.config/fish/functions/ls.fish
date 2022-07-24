@@ -1,1 +1,3 @@
-../../../dotfiles/fish/.config/fish/functions/ls.fish
+function ls --wraps=exa --description 'alias ls=exa'
+  exa $argv; 
+end
