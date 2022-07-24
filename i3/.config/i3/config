@@ -127,6 +127,9 @@ bindsym $mod+w layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
+# toggle sticky
+bindsym $mod+Ctrl+space sticky toggle
+
 # change focus between tiling / floating windows
 bindsym $mod+d focus mode_toggle
 
@@ -282,6 +285,8 @@ bindsym $mod+Shift+k gaps inner all minus 5
 # bindsym $mod+apostrophe exec ~/.config/i3/layout_manager.sh
 # Switch master and secondary window
 bindsym $mod+p exec --no-startup-id ~/.config/i3/promote_window.py
+# Center current window by creating empty spaces around
+bindsym $mod+shift+p exec --no-startup-id ~/.config/i3/center_window.sh
 # Play a youtube video whose link is in clipboard with mpv+youtube-dl
 bindsym $mod+o exec --no-startup-id ~/.config/i3/play_yt_video.sh
 
@@ -296,8 +301,8 @@ exec --no-startup-id sxhkd
 # exec --no-startup-id 'pkill redshift-gtk; pkill redshift; redshift-gtk'
 # exec --no-startup-id ~/.config/i3/start_apps.sh
 exec --no-startup-id ~/.config/polybar/launch.sh --grayblocks
-exec --no-startup-id ~/.config/i3/column_layout.py
-
+#exec --no-startup-id ~/.config/i3/column_layout.py
+exec autotiling
 
 # Assign apps to specific workspaces
 for_window [class="^Spotify$"] move to workspace $ws8
