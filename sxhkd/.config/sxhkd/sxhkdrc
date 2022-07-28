@@ -1,14 +1,14 @@
 # Media control keys
 XF86AudioPlay
-	playerctl -p spotify play-pause
+	playerctl -p spotify_player play-pause
 XF86AudioStop
-	playerctl -p spotify pause
+	playerctl -p spotify_player pause
 XF86AudioPause
-	playerctl -p spotify pause
+	playerctl -p spotify_player pause
 XF86AudioNext
-	playerctl -p spotify next
+	playerctl -p spotify_player next
 XF86AudioPrev
-	playerctl -p spotify previous
+	playerctl -p spotify_player previous
 
 # Volume control keys
 XF86AudioRaiseVolume
