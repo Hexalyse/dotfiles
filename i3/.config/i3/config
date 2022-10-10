@@ -86,6 +86,8 @@ bindsym $mod+q kill
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+focus_wrapping no
+
 # change focus
 bindsym $mod+n focus left
 bindsym $mod+e focus down
@@ -249,8 +251,8 @@ set $ibgcolor #282828
 set $textcolor #eceff4
 set $itextcolor #d8dee9
 set $ubgcolor #bf616a
-set $iborder #1a1b26
-set $border #444b6a
+set $iborder #313244
+set $border #585b70
 # set $border #5e81ac
 
 #			border		background	text		indicator
@@ -303,6 +305,7 @@ exec --no-startup-id sxhkd
 exec --no-startup-id ~/.config/polybar/launch.sh --grayblocks
 #exec --no-startup-id ~/.config/i3/column_layout.py
 exec autotiling
+exec --no-startup-id /home/hexalyse/.local/share/gem/ruby/3.0.0/bin/fusuma
 
 # Assign apps to specific workspaces
 for_window [class="^Spotify$"] move to workspace $ws8
